@@ -150,7 +150,7 @@ def conv_leave(bot, event, conv_name='', *args):
         yield from c.leave()
 
 
-@command.register(admin=True)
+@command.register(admin=False)
 def conv_list(bot, event, conv_name='', *args):
     """List all conversations where bot is wreaking havoc
        Usage: /bot conv_list [conversation_name]

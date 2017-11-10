@@ -185,14 +185,14 @@ class HangupsBot:
     @asyncio.coroutine
     def _on_connect(self):
         """Handle connecting for the first time"""
-        print(_('Connected!'))
+        print(_('Welcome to bot!'))
         self._retry = 0
         self._user_list, self._conv_list = (
             yield from hangups.build_user_conversation_list(self._client)
         )
         self._conv_list.on_event.add_observer(self._on_event)
 
-        print(_('Conversations:'))
+        print(_('chats:'))
         for c in self.list_conversations():
             print('  {} ({})'.format(get_conv_name(c, truncate=True), c.id_))
         print()

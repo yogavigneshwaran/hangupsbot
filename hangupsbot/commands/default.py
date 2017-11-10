@@ -48,7 +48,7 @@ def echo(bot, event, *args):
     yield from event.conv.send_message(text_to_segments(' '.join(args)))
 
 
-@command.register(admin=True)
+@command.register(admin=False)
 def quit(bot, event, *args):
     """Oh my God! They killed Kenny! You bastards!"""
     print(_('HangupsBot killed by user {} from conversation {}').format(

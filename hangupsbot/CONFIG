@@ -1,8 +1,7 @@
 {
   "admins": ["USER1_ID", "USER2_ID"],
   "autoreplies": [
-    [["hi", "hello"], "Hello there!"],
-    [["howareyou?"], "Fuck off"],
+    [["hi", "hello"], "Hello!"],
     [["bot"], "At your service!"]
   ],
   "autoreplies_enabled": true,
@@ -17,8 +16,8 @@
       ]
     },
     "CONV2_ID": {
-      "autoreplies_enabled": true,
-      "commands_enabled": true,
+      "autoreplies_enabled": false,
+      "commands_enabled": false,
       "forwarding_enabled": false,
       "forward_to": [
         "CONV1_ID"
