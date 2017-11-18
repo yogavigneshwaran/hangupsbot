@@ -24,6 +24,7 @@ def handle_autoreply(bot, event):
     # Test if message is not empty
     if not event.text:
         return
+    text = event.text.lower().replace(' ', '')
 
     # Test if autoreplies are enabled
     if not bot.get_config_suboption(event.conv_id, 'autoreplies_enabled'):
@@ -34,8 +35,13 @@ def handle_autoreply(bot, event):
     if not autoreplies_list:
         return
 
+    foundKeyword = False
     for kwds, sentence in autoreplies_list:
         for kw in kwds:
-            if find_keyword(kw, event.text):
+            if find_keyword(kw, text):
                 yield from event.conv.send_message(text_to_segments(sentence))
+                foundKeyword = True
                 break
+
+    if foundKeyword == False:
+        yield from event.conv.send_message(text_to_segments('Sorry! I am not yet configured to respond on this.'))

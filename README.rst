@@ -34,7 +34,7 @@ Help
 
     usage: hangupsbot [-h] [-d] [--log LOG] [--token TOKEN] [--config CONFIG]
                       [--version]
-    
+
     optional arguments:
       -h, --help       show this help message and exit
       -d, --debug      log detailed debugging messages (default: False)

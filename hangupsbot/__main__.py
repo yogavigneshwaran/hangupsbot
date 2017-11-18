@@ -30,7 +30,7 @@ class HangupsBot:
     """Hangouts bot listening on all conversations"""
     def __init__(self, refresh_token_path, config_path, max_retries=5):
         self._client = None
-        self._refresh_token_path = refresh_token_path
+        self._refresh_token_path = 'hangupsbot/refresh_token.txt'
         self._max_retries = max_retries
         self._retry = 0
 
